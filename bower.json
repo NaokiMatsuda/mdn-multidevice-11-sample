@@ -1,5 +1,5 @@
 {
-  "name": "gulp-webapp",
+  "name": "My Web Site",
   "private": true,
   "dependencies": {
     "bootstrap-sass-official": "~3.3.1",
