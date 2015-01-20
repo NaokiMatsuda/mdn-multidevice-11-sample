@@ -61,7 +61,7 @@ gulp.task('sass', function () {
 // アイコンフォント生成
 // ------------------------------------------
 gulp.task('iconfonts', function(){
-  gulp.src(['dev/icons/*.svg'])
+  return gulp.src(['dev/icons/*.svg'])
     .pipe(iconfontCss({
       fontName: 'myicons',
       path: 'dev/icons/templates/_icons.scss',
@@ -70,7 +70,7 @@ gulp.task('iconfonts', function(){
     }))
     .pipe(iconfont({
       fontName: 'myicons'
-     }))
+    }))
     .pipe(gulp.dest('dev/fonts'));
 });
 
@@ -174,15 +174,6 @@ gulp.task('serve', function () {
 // BowerコンポーネントのパスをHTML/CSSに自動挿入
 // ------------------------------------------
 gulp.task('wiredep', function () {
-  var wiredep = require('wiredep').stream;
-
-  gulp.src('dev/scss/*.scss')
-    .pipe(wiredep({
-      exclude: [
-        'bootstrap-sass-official'
-      ]}))
-    .pipe(gulp.dest('dev/scss'));
-
   gulp.src('dev/jade/**/*.jade')
     .pipe(wiredep({
       directory: 'bower_components',
@@ -193,6 +184,15 @@ gulp.task('wiredep', function () {
         'respond'
       ]}))
     .pipe(gulp.dest('dev/jade'));
+
+  gulp.src('dev/scss/*.scss')
+    .pipe(wiredep({
+      directory: 'bower_components',
+      ignorePath: '../',
+      exclude: [
+        'bootstrap-sass-official'
+      ]}))
+    .pipe(gulp.dest('dev/scss'));
 });
 
 
