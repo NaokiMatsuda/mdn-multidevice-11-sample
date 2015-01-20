@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "myicons";
+  src: url('../fonts/myicons.eot');
+  src: url('../fonts/myicons.eot?#iefix') format('eot'),
+    url('../fonts/myicons.woff') format('woff'),
+    url('../fonts/myicons.ttf') format('truetype'),
+    url('../fonts/myicons.svg#myicons') format('svg');
+}
+
+%icon {
+  font-family: "myicons";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == icon-01 {
+    $char: "\E001";
+  }
+  @if $filename == icon-02 {
+    $char: "\E002";
+  }
+  @if $filename == icon-03 {
+    $char: "\E003";
+  }
+  @if $filename == icon-04 {
+    $char: "\E004";
+  }
+  @if $filename == icon-05 {
+    $char: "\E005";
+  }
+  @if $filename == icon-06 {
+    $char: "\E006";
+  }
+  @if $filename == icon-07 {
+    $char: "\E007";
+  }
+  @if $filename == icon-08 {
+    $char: "\E008";
+  }
+  @if $filename == icon-09 {
+    $char: "\E009";
+  }
+  @if $filename == icon-10 {
+    $char: "\E00A";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before) {
+  &:#{$insert} {
+    @extend %icon;
+    content: icon-char($filename);
+  }
+}
+
+.icon-icon-01 {
+  @include icon(icon-01);
+}
+.icon-icon-02 {
+  @include icon(icon-02);
+}
+.icon-icon-03 {
+  @include icon(icon-03);
+}
+.icon-icon-04 {
+  @include icon(icon-04);
+}
+.icon-icon-05 {
+  @include icon(icon-05);
+}
+.icon-icon-06 {
+  @include icon(icon-06);
+}
+.icon-icon-07 {
+  @include icon(icon-07);
+}
+.icon-icon-08 {
+  @include icon(icon-08);
+}
+.icon-icon-09 {
+  @include icon(icon-09);
+}
+.icon-icon-10 {
+  @include icon(icon-10);
+}

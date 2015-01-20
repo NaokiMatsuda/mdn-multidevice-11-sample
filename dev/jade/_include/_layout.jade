@@ -1,0 +1,52 @@
+doctype
+<!--[if IE 8 ]>
+html(lang='ja').ie.ie8
+<![endif]-->
+<!--[if IE 9 ]>
+html(lang='ja').ie9
+<![endif]-->
+<!--[if !(IE)]><!-->
+html(lang='ja')<!--<![endif]-->
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='robots', content='INDEX,FOLLOW,NOODP,NOYDIR,NOARCHIVE')
+    block title
+    block meta
+      meta(name='description', content='***********')
+      meta(name='keywords', content='***********')
+      meta(name="author", content="")
+      meta(name="copyright", content="")
+    // build:css css/style.css
+    link(href='css/style.css', rel='stylesheet')
+    // endbuild
+    // build:js js/modernizr.js
+    script(src='../bower_components/modernizr/modernizr.js')
+    // endbuild
+    != '\n<!--[if lt IE 9]>'
+    // build:js js/respond.js
+    script(src='../bower_components/respond/dest/respond.min.js')
+    // endbuild
+    != '\n<![endif]-->\n'
+  body
+  block body
+  // build:js js/vendor.js
+  // bower:js
+  script(src='../bower_components/jquery/dist/jquery.js')
+  // endbower
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js')
+  script(src='../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js')
+  // endbuild
+  // build:js js/main.js
+  script(src='js/main.js')
+  // endbuild

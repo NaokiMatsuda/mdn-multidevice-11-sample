@@ -1,0 +1,9 @@
+{
+  "name": "gulp-webapp",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1",
+    "modernizr": "~2.8.1",
+    "respond": "~1.4.2"
+  }
+}
