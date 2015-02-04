@@ -1,5 +1,5 @@
 {
-  "name": "My Web Site",
+  "name": "mdn-multidevice-11-sample",
   "private": true,
   "dependencies": {
     "bootstrap-sass-official": "~3.3.3",
