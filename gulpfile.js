@@ -219,5 +219,5 @@ gulp.task('w', ['watch']);  // watch タスクのエイリアス
 // 公開時のセットを生成
 // ------------------------------------------
 gulp.task('build', ['clean'], function (cb) {
-  runSequence('sass', ['jshint', 'html', 'images', 'fonts', 'devcopy'], cb);
+  runSequence('jade', 'sass', ['jshint', 'html', 'images', 'fonts', 'devcopy'], cb);
 });
