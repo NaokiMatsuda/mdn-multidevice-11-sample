@@ -201,7 +201,7 @@ gulp.task('wiredep', function () {
 gulp.task('watch', ['serve'], function () {
   gulp.watch([
     'dev/**/*.html',
-    'dev/scss/**/*.css',
+    'dev/css/**/*',
     'dev/js/**/*.js',
     'dev/fonts/**/*',
     'dev/images/**/*'
