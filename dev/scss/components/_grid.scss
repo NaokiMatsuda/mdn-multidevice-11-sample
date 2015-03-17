@@ -1,0 +1,50 @@
+//
+// Grid
+// --------------------------------------------------
+
+
+// grid row
+// -------------------------
+.row {
+  position: relative;
+}
+
+
+// grid no-padding
+// -------------------------
+.row-nopadding {
+  @include clearfix();
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  @for $i from 1 through $grid-columns {
+    .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+
+// grid inline-block
+// -------------------------
+.row-inlineblock {
+  @extend .row;
+  letter-spacing: -.4em;
+  @for $i from 1 through $grid-columns {
+    .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+      float: none;
+      letter-spacing: 0;
+      vertical-align: middle;
+    }
+    .col-xs-#{$i} {
+      display: inline-block;
+    }
+    @media (min-width: $screen-sm-min) {
+      .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+

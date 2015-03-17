@@ -1,0 +1,76 @@
+//
+// Section
+// --------------------------------------------------
+
+
+// block / margin
+// -------------------------
+.block-lg {
+  margin-top: $grid-gutter-width * 1.5;
+  margin-bottom: $grid-gutter-width * 1.5;
+  @media (min-width: $screen-sm-min) {
+    margin-top: $grid-gutter-width * 3;
+    margin-bottom: $grid-gutter-width * 3;
+  }
+}
+.block-md {
+  margin-top: $grid-gutter-width;
+  margin-bottom: $grid-gutter-width;
+  @media (min-width: $screen-sm-min) {
+    margin-top: $grid-gutter-width * 2;
+    margin-bottom: $grid-gutter-width * 2;
+  }
+}
+.block-sm {
+  margin-top: $grid-gutter-width / 1.5;
+  margin-bottom: $grid-gutter-width / 1.5;
+  @media (min-width: $screen-sm-min) {
+    margin-top: $grid-gutter-width;
+    margin-bottom: $grid-gutter-width;
+  }
+}
+.block-xs {
+  margin-top: $grid-gutter-width / 2;
+  margin-bottom: $grid-gutter-width / 2;
+  @media (min-width: $screen-sm-min) {
+    margin-top: $grid-gutter-width / 2;
+    margin-bottom: $grid-gutter-width / 2;
+  }
+}
+
+
+// block / padding
+// -------------------------
+.block-padding-lg {
+  padding-top: $grid-gutter-width * 1.5;
+  padding-bottom: $grid-gutter-width * 1.5;
+  @media (min-width: $screen-sm-min) {
+    padding-top: $grid-gutter-width * 3;
+    padding-bottom: $grid-gutter-width * 3;
+  }
+}
+.block-padding-md {
+  padding-top: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
+  @media (min-width: $screen-sm-min) {
+    padding-top: $grid-gutter-width * 2;
+    padding-bottom: $grid-gutter-width * 2;
+  }
+}
+.block-padding-sm {
+  padding-top: $grid-gutter-width / 1.5;
+  padding-bottom: $grid-gutter-width / 1.5;
+  @media (min-width: $screen-sm-min) {
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
+  }
+}
+.block-padding-xs {
+  padding-top: $grid-gutter-width / 2;
+  padding-bottom: $grid-gutter-width / 2;
+  @media (min-width: $screen-sm-min) {
+    padding-top: $grid-gutter-width / 2;
+    padding-bottom: $grid-gutter-width / 2;
+  }
+}
+
