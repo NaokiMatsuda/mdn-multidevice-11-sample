@@ -47,18 +47,24 @@ dev
 監視状態で、[devディレクトリにあるscssファイル](dev/scss) を編集すると、自動でCSSが生成されます。
 
 scssファイルを編集すると、「dev/css/style.css」として生成されます。  
-Bootstrapの各種変数は「_bootstrap-variables.sass」を編集してください。
+Bootstrapの各種変数は「dev/scss/_bootstrap-variables.scss」を編集してください。
+
+独自の変数の定義は「_original-variables.scss」に記述してください。
 
 なお、「_」ではじまるファイル名のscssファイルはCSSを生成しません。
 
 ``` bash
 dev
 └── scss
-    ├── _bootstrap-variables.sass
+    ├── components
+    ├── _bootstrap-variables.scss
     ├── _bootstrap.scss
     ├── _icons.scss
+    ├── _original-variables.scss
     └── style.scss
 ```
+
+「dev/scss/components」には、いくつか便利クラスを持ったSCSSファイルを同梱しています。内容をご確認の上、使用するようにしてください。
 
 ## アイコンフォントを作る
 
