@@ -2,7 +2,7 @@
   "name": "mdn-multidevice-11-sample",
   "private": true,
   "dependencies": {
-    "bootstrap-sass-official": "~3.3.3",
+    "bootstrap-sass-official": "~3.3.4",
     "modernizr": "~2.8.3",
     "respond": "~1.4.2"
   }
