@@ -1,5 +1,8 @@
 node_modules
+dev/css
+*.map
 htdocs
 .DS_Store
 .sass-cache
 bower_components
+

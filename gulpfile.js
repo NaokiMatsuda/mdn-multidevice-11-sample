@@ -7,8 +7,8 @@ var gulp            = require('gulp'),
     browserSync     = require('browser-sync'),
     del             = require('del'),
     glob            = require('glob'),
-    autoprefixer    = require('gulp-autoprefixer'),
-    cache           = require('gulp-cache'),
+    autoprefixer    = require('autoprefixer-core'),
+    cached           = require('gulp-cached'),
     cmq             = require('gulp-combine-media-queries'),
     filter          = require('gulp-filter'),
     flatten         = require('gulp-flatten'),
@@ -19,7 +19,7 @@ var gulp            = require('gulp'),
     jade            = require('gulp-jade'),
     jshint          = require('gulp-jshint'),
     jshintStylish   = require('jshint-stylish'),
-    minifyCss       = require('gulp-minify-css'),
+    csso            = require('gulp-csso'),
     plumber         = require('gulp-plumber'),
     replace         = require('gulp-replace'),
     sass            = require('gulp-sass'),
@@ -29,7 +29,23 @@ var gulp            = require('gulp'),
     useref          = require('gulp-useref'),
     runSequence     = require('run-sequence'),
     mainBowerFiles  = require('main-bower-files'),
+    postcss         = require('gulp-postcss'),
+    notify          = require('gulp-notify'),
     wiredep         = require('wiredep').stream;
+
+
+// 初期化
+// ------------------------------------------
+gulp.task('init', function() {
+  var bstFilter = filter(['**/_bootstrap.scss', '**/_variables.scss']);
+  return gulp.src(['bower_components/bootstrap-sass-official/assets/stylesheets/**'])
+    .pipe(bstFilter)
+    .pipe(gulpif('**/_bootstrap.scss', replace('@import "bootstrap/', '@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/')))
+    .pipe(gulpif('**/_variables.scss', replace(' !default;', ';')))
+    .pipe(gulpif('**/_variables.scss', replace('"../fonts/bootstrap/"', '"../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/"')))
+    .pipe(flatten())
+    .pipe(gulp.dest('dev/scss'));
+});
 
 
 // jade to html コンパイル
@@ -37,6 +53,7 @@ var gulp            = require('gulp'),
 gulp.task('jade', function() {
   return gulp.src(['dev/jade/**/*.jade', '!dev/jade/**/_*.jade'])
     // .pipe(changed('jade', {extension: '.jade'}))
+    // .pipe(cached('jade'))
     .pipe(jade({
       pretty: true,
       basedir: 'dev/jade'
@@ -48,11 +65,17 @@ gulp.task('jade', function() {
 // Sass コンパイル
 // ------------------------------------------
 gulp.task('sass', function () {
+  var processors = [
+    autoprefixer({browsers: ['last 2 version']})
+  ];
   return gulp.src('dev/scss/style.scss')
-    .pipe(plumber())
+    // .pipe(cached('sass'))
+    .pipe(plumber({
+      errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
     .pipe(sourcemaps.init())
-    .pipe(sass({sourcemap: true}))
-    .pipe(autoprefixer({browsers: ['last 2 versions']}))
+    .pipe(sass())
+    .pipe(postcss(processors))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dev/css'));
 });
@@ -108,8 +131,9 @@ gulp.task('html', ['sass'], function () {
       ]
     })))
     .pipe(gulpif('*.css', cmq()))
-    .pipe(gulpif('*.css', minifyCss()))
-    .pipe(gulpif('*.css', replace('../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap','../fonts')))
+    .pipe(gulpif('*.css', csso()))
+    .pipe(gulpif('*.css', replace('../bower_components/bootstrap-sass-official/assets/fonts/bootstrap', '../fonts')))
+    .pipe(gulpif('*.css', replace('../bower_components/fontawesome/fonts', '../fonts')))
     .pipe(assets.restore())
     .pipe(useref())
     .pipe(gulp.dest('htdocs'));
@@ -120,7 +144,7 @@ gulp.task('html', ['sass'], function () {
 // ------------------------------------------
 gulp.task('images', function () {
   return gulp.src('dev/images/**/*')
-    .pipe(cache(imagemin({
+    .pipe(cached(imagemin({
       progressive: true,
       interlaced: true
     })))
