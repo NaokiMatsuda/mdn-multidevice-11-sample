@@ -7,6 +7,7 @@ Bowerのコンポーネント（Bootstrap for Sass など）と、gulpで使用�
 ``` bash
 $ bower install
 $ npm install
+$ gulp init
 ```
 
 ## gulpでのwatchを開始
@@ -53,14 +54,14 @@ Bootstrapの各種変数は「dev/scss/_bootstrap-variables.scss」を編集し�
 
 なお、「_」ではじまるファイル名のscssファイルはCSSを生成しません。
 
-``` bash
+```
 dev
 └── scss
     ├── components
-    ├── _bootstrap-variables.scss
-    ├── _bootstrap.scss
-    ├── _icons.scss
-    ├── _original-variables.scss
+    ├── _variables.scss  // Bootstrapの変数
+    ├── _bootstrap.scss  // Bootstrapのscssimport指定
+    ├── _icons.scss  // オリジナルのアイコンフォント用scss
+    ├── _variables-original.scss  // オリジナルの変数用scss
     └── style.scss
 ```
 

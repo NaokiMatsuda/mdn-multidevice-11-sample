@@ -5,7 +5,7 @@
 
 // block / margin
 // -------------------------
-.block-lg {
+.block-mg-lg {
   margin-top: $grid-gutter-width * 1.5;
   margin-bottom: $grid-gutter-width * 1.5;
   @media (min-width: $screen-sm-min) {
@@ -13,7 +13,7 @@
     margin-bottom: $grid-gutter-width * 3;
   }
 }
-.block-md {
+.block-mg-md {
   margin-top: $grid-gutter-width;
   margin-bottom: $grid-gutter-width;
   @media (min-width: $screen-sm-min) {
@@ -21,7 +21,7 @@
     margin-bottom: $grid-gutter-width * 2;
   }
 }
-.block-sm {
+.block-mg-sm {
   margin-top: $grid-gutter-width / 1.5;
   margin-bottom: $grid-gutter-width / 1.5;
   @media (min-width: $screen-sm-min) {
@@ -29,7 +29,7 @@
     margin-bottom: $grid-gutter-width;
   }
 }
-.block-xs {
+.block-mg-xs {
   margin-top: $grid-gutter-width / 2;
   margin-bottom: $grid-gutter-width / 2;
   @media (min-width: $screen-sm-min) {
@@ -41,7 +41,7 @@
 
 // block / padding
 // -------------------------
-.block-padding-lg {
+.block-pd-lg {
   padding-top: $grid-gutter-width * 1.5;
   padding-bottom: $grid-gutter-width * 1.5;
   @media (min-width: $screen-sm-min) {
@@ -49,7 +49,7 @@
     padding-bottom: $grid-gutter-width * 3;
   }
 }
-.block-padding-md {
+.block-pd-md {
   padding-top: $grid-gutter-width;
   padding-bottom: $grid-gutter-width;
   @media (min-width: $screen-sm-min) {
@@ -57,7 +57,7 @@
     padding-bottom: $grid-gutter-width * 2;
   }
 }
-.block-padding-sm {
+.block-pd-sm {
   padding-top: $grid-gutter-width / 1.5;
   padding-bottom: $grid-gutter-width / 1.5;
   @media (min-width: $screen-sm-min) {
@@ -65,7 +65,7 @@
     padding-bottom: $grid-gutter-width;
   }
 }
-.block-padding-xs {
+.block-pd-xs {
   padding-top: $grid-gutter-width / 2;
   padding-bottom: $grid-gutter-width / 2;
   @media (min-width: $screen-sm-min) {
