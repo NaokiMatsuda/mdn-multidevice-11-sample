@@ -5,6 +5,14 @@
 
 // block / margin
 // -------------------------
+.block-mg-xl {
+  margin-top: $grid-gutter-width * 2;
+  margin-bottom: $grid-gutter-width * 2;
+  @media (min-width: $screen-sm-min) {
+    margin-top: $grid-gutter-width * 4;
+    margin-bottom: $grid-gutter-width * 4;
+  }
+}
 .block-mg-lg {
   margin-top: $grid-gutter-width * 1.5;
   margin-bottom: $grid-gutter-width * 1.5;
@@ -41,6 +49,14 @@
 
 // block / padding
 // -------------------------
+.block-pd-xl {
+  padding-top: $grid-gutter-width * 2;
+  padding-bottom: $grid-gutter-width * 2;
+  @media (min-width: $screen-sm-min) {
+    padding-top: $grid-gutter-width * 4;
+    padding-bottom: $grid-gutter-width * 4;
+  }
+}
 .block-pd-lg {
   padding-top: $grid-gutter-width * 1.5;
   padding-bottom: $grid-gutter-width * 1.5;

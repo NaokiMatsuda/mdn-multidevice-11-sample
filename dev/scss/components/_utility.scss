@@ -5,6 +5,12 @@
 
 // margin Top
 // -------------------------
+.mt-xj {
+  margin-top: $grid-gutter-width * 2 !important;
+  @media (min-width: $screen-sm-min) {
+    margin-top: $grid-gutter-width * 4 !important;
+  }
+}
 .mt-lg {
   margin-top: $grid-gutter-width * 1.5 !important;
   @media (min-width: $screen-sm-min) {
@@ -35,6 +41,12 @@
 
 // margin Bottom
 // -------------------------
+.mb-xl {
+  margin-bottom: $grid-gutter-width * 2 !important;
+  @media (min-width: $screen-sm-min) {
+    margin-bottom: $grid-gutter-width * 4 !important;
+  }
+}
 .mb-lg {
   margin-bottom: $grid-gutter-width * 1.5 !important;
   @media (min-width: $screen-sm-min) {
@@ -66,6 +78,12 @@
 
 // padding Top
 // -------------------------
+.pt-xl {
+  padding-top: $grid-gutter-width * 2 !important;
+  @media (min-width: $screen-sm-min) {
+    padding-top: $grid-gutter-width * 4 !important;
+  }
+}
 .pt-lg {
   padding-top: $grid-gutter-width * 1.5 !important;
   @media (min-width: $screen-sm-min) {
@@ -96,6 +114,12 @@
 
 // padding Bottom
 // -------------------------
+.pb-xl {
+  padding-bottom: $grid-gutter-width * 2 !important;
+  @media (min-width: $screen-sm-min) {
+    padding-bottom: $grid-gutter-width * 4 !important;
+  }
+}
 .pb-lg {
   padding-bottom: $grid-gutter-width * 1.5 !important;
   @media (min-width: $screen-sm-min) {
