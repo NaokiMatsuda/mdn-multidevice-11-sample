@@ -88,8 +88,8 @@ gulp.task('iconfonts', function(){
     .pipe(iconfontCss({
       fontName: 'myicons',
       path: 'dev/icons/templates/_icons.scss',
-      targetPath: '../scss/_icons.scss',
-      fontPath: '../fonts/'
+      targetPath: '../scss/components/_icons.scss',
+      fontPath: '../../fonts/'
     }))
     .pipe(iconfont({
       fontName: 'myicons'
