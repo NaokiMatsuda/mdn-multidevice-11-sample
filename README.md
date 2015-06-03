@@ -2,19 +2,28 @@
 
 ## はじめに
 
-Bowerのコンポーネント（Bootstrap for Sass など）と、gulpで使用するnode moduleをインストール
+Bowerのコンポーネント（Bootstrap for Sass など）と、gulpで使用するnode moduleをインストール。
 
 ``` bash
 $ bower install
 $ npm install
+```
+
+## gulpで必要ファイルを作業スペースにコピー
+
+Bootstrapの変数ファイルを作業スペースにコピーしてくる。
+
+``` bash
 $ gulp init
 ```
+
+(このタスクは最初だけ。開発中には、変更した変数などが初期化されるので実行しないこと。）
 
 ## gulpでのwatchを開始
 
 以下のコマンドで、プロジェクトフォルダ内のjadeファイルやscssファイル、アイコンフォント用のsvgファイルなどの変更を監視します。
 
-Browser syncによって自動でローカルサーバーが起動し、ブラウザにページが表示されます。変更監視によって、ファイルに変更があった際は自動でリロードされます。
+Browser Syncによって自動でローカルサーバーが起動し、ブラウザにページが表示されます。監視によってファイルに変更があった際は自動でリロードされます。
 
 ``` bash
 $ gulp watch
@@ -93,7 +102,7 @@ gulp.task('iconfonts', function(){
 ターミナルを別ウインドウで起動し、試しに、アニメーションの実装でよく使用される「[Velocity.js](https://github.com/julianshapiro/velocity)」を追加してみましょう。
 
 ``` bash
-$ bower install velocity --save
+$ bower install --save velocity
 ```
 
 --save オプションを付けることで、「bower.json」にVelocity.jsが追加されます。  
@@ -110,7 +119,7 @@ bower.jsonが変更されたことで自動的に_layout.jadeにjsファイル�
 なお、コンポーネントをアンインストールする際は以下のコマンドを実行します。
 
 ``` bash
-$ bower uninstall velocity --save
+$ bower uninstall --save velocity
 ```
 
 
