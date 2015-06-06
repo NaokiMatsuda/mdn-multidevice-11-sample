@@ -1,13 +1,13 @@
 @font-face {
   font-family: "myicons";
-  src: url('../fonts/myicons.eot');
-  src: url('../fonts/myicons.eot?#iefix') format('eot'),
-    url('../fonts/myicons.woff') format('woff'),
-    url('../fonts/myicons.ttf') format('truetype'),
-    url('../fonts/myicons.svg#myicons') format('svg');
+  src: url('../../fonts/myicons.eot');
+  src: url('../../fonts/myicons.eot?#iefix') format('eot'),
+    url('../../fonts/myicons.woff') format('woff'),
+    url('../../fonts/myicons.ttf') format('truetype'),
+    url('../../fonts/myicons.svg#myicons') format('svg');
 }
 
-%icon {
+.icon {
   font-family: "myicons";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -58,7 +58,7 @@
 
 @mixin icon($filename, $insert: before) {
   &:#{$insert} {
-    @extend %icon;
+    // @extend %icon;
     content: icon-char($filename);
   }
 }

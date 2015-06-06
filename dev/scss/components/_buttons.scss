@@ -1,0 +1,17 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+  &:hover {
+    transition: .3s;
+  }
+}
+
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-danger,
+.btn-warning {
+  border: none;
+}

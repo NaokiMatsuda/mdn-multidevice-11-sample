@@ -161,11 +161,17 @@
 .bg-white {
   background-color: $white-base;
 }
+.bg-gray-base {
+  background-color: $gray-base;
+  color: $white-base;
+}
 .bg-gray-dark {
   background-color: $gray-dark;
+  color: $white-base;
 }
 .bg-gray {
   background-color: $gray;
+  color: $white-base;
 }
 .bg-gray-lighter {
   background-color: $gray-lighter;

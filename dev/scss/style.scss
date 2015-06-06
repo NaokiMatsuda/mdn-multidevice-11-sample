@@ -7,19 +7,20 @@
 // bower:scss
 // endbower
 
+// --------------------------------------------------
 
 // Original Variables
 @import 'variables-original';
 
-
-// icon Fonts
-@import 'icons';
-
 // Original Components
 @import 'components/block';
 @import 'components/grid';
+@import 'components/buttons';
+@import 'components/navbar';
 @import 'components/type';
+@import 'components/jumbotron';
 @import 'components/utility';
+@import 'components/icons'; // icon Fonts
 
 // Original Layout
 @import 'layout/layout';
