@@ -5,53 +5,60 @@ block meta
   meta(name='description', content='***********')
   meta(name='keywords', content='***********')
 block body
-  nav(role="navigation").navbar.navbar-default
-    .navbar-header
-      button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a(href="#").navbar-brand Sample Dev Site
-    .collapse.navbar-collapse.navbar-ex1-collapse
-      ul.nav.navbar-nav
-        li.active: a(href="#") Link
-        li: a(href="#") Link
-      ul.nav.navbar-nav.navbar-right
-        li: a(href="#") Link
-        li.dropdown
-          a(href="#", data-toggle="dropdown").dropdown-toggle Dropdown <b class="caret"></b>
-          ul.dropdown-menu(role="menu")
-            li: a(href="#") Action
-            li: a(href="#") Another action
-            li: a(href="#") Something else here
-            li: a(href="#") Separated link
+  .navbar-wrap
+    nav(role="navigation").navbar.navbar-default.navbar-fixed-top
+      .navbar-header
+        button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(href="#").navbar-brand Title
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li.active: a(href="#") Link
+          li: a(href="#") Link
+        ul.nav.navbar-nav.navbar-right
+          li: a(href="#") Link
+          li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false")
+              | Dropdown
+              span.caret
+            ul.dropdown-menu(role="menu")
+              li: a(href="#") Action
+              li: a(href="#") Another action
+              li: a(href="#") Something else here
+              li: a(href="#") Separated link
   header
-    .container
-      .block-md
+    .jumbotron.jumbotron-bgimg.block-pd-xl.bg-gray-base
+      .container
         .row
           .col-sm-10.col-sm-offset-1
-            h1 Sample Dev Sites
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, minima quo repellat inventore animi iure optio itaque natus voluptas facilis sunt labore ipsa, blanditiis minus cum. Incidunt necessitatibus, delectus.
-            p: img(src="http://lorempixel.com/1000/500/abstract/2").img-responsive
+            .bounceInDown.animated
+              h1 Hello, world!
+            .bounceInUp.animated
+              p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum cumque aliquid quisquam obcaecati perferendis. Quia ipsa possimus veritatis ducimus iure at earum maiores, fugiat nihil repellendus temporibus cum deserunt quas!
+              p
+                a(href="#").btn.btn-default.btn-ghost.btn-lg Learn more
   main(role="main")#main
     .container
-      .block-md
-        .row
-          .col-sm-7.col-sm-offset-1
-            article
+      .row
+        .col-sm-7.col-sm-offset-1
+          article
+            section.block-mg-md
               h2 Original Icon Fonts
               .h2
-                i.icon-icon-01(aria-hidden="true")
-                i.icon-icon-02(aria-hidden="true")
-                i.icon-icon-03(aria-hidden="true")
-                i.icon-icon-04(aria-hidden="true")
-                i.icon-icon-05(aria-hidden="true")
-                i.icon-icon-06(aria-hidden="true")
-                i.icon-icon-07(aria-hidden="true")
-                i.icon-icon-08(aria-hidden="true")
-                i.icon-icon-09(aria-hidden="true")
-                i.icon-icon-10(aria-hidden="true")
+                i.icon.icon-icon-01(aria-hidden="true")
+                i.icon.icon-icon-02(aria-hidden="true")
+                i.icon.icon-icon-03(aria-hidden="true")
+                i.icon.icon-icon-04(aria-hidden="true")
+                i.icon.icon-icon-05(aria-hidden="true")
+                i.icon.icon-icon-06(aria-hidden="true")
+                i.icon.icon-icon-07(aria-hidden="true")
+                i.icon.icon-icon-08(aria-hidden="true")
+                i.icon.icon-icon-09(aria-hidden="true")
+                i.icon.icon-icon-10(aria-hidden="true")
+            section.block-mg-md
               h2 Fontawesome Glyphicon
               .h2
                 i.fa.fa-twitter(aria-hidden="true")
@@ -59,6 +66,7 @@ block body
                 i.fa.fa-facebook(aria-hidden="true")
                 i.fa.fa-apple(aria-hidden="true")
                 i.fa.fa-angle-right(aria-hidden="true")
+            section.block-mg-md
               h2 Bootstrap Glyphicon
               .h2
                 i.glyphicon.glyphicon-asterisk(aria-hidden="true")
@@ -72,50 +80,18 @@ block body
                 i.glyphicon.glyphicon-camera(aria-hidden="true")
               h3 Lorem ipsum
               p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, minima quo repellat inventore animi iure optio itaque natus voluptas facilis sunt labore ipsa, blanditiis minus cum. Incidunt necessitatibus, delectus.
-          .col-sm-4
-            aside
+        .col-sm-4
+          aside
+            section.block-mg-md
               h2 aside
               ul
                 li Lorem ipsum dolor sit amet
                 li Lorem ipsum dolor sit amet
                 li Lorem ipsum dolor sit amet
                 li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
-      .block-md
+  footer
+    .block-pd-md.bg-gray-lightest
+      .container
         .row
-          .col-sm-7.col-sm-offset-1
-            article
-              h2 Original Icon Fonts
-              .h2
-                i.icon-icon-01(aria-hidden="true")
-                i.icon-icon-02(aria-hidden="true")
-                i.icon-icon-03(aria-hidden="true")
-                i.icon-icon-04(aria-hidden="true")
-                i.icon-icon-05(aria-hidden="true")
-                i.icon-icon-06(aria-hidden="true")
-                i.icon-icon-07(aria-hidden="true")
-                i.icon-icon-08(aria-hidden="true")
-                i.icon-icon-09(aria-hidden="true")
-                i.icon-icon-10(aria-hidden="true")
-              h2 Bootstrap Glyphicon
-              .h2
-                i.glyphicon.glyphicon-asterisk(aria-hidden="true")
-                i.glyphicon.glyphicon-plus(aria-hidden="true")
-                i.glyphicon.glyphicon-euro(aria-hidden="true")
-                i.glyphicon.glyphicon-minus(aria-hidden="true")
-                i.glyphicon.glyphicon-cloud(aria-hidden="true")
-                i.glyphicon.glyphicon-envelope(aria-hidden="true")
-                i.glyphicon.glyphicon-pencil(aria-hidden="true")
-                i.glyphicon.glyphicon-cloud(aria-hidden="true")
-                i.glyphicon.glyphicon-camera(aria-hidden="true")
-              h3 Lorem ipsum
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, minima quo repellat inventore animi iure optio itaque natus voluptas facilis sunt labore ipsa, blanditiis minus cum. Incidunt necessitatibus, delectus.
-          .col-sm-4
-            aside
-              h2 aside
-              ul
-                li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
+          .col-sm-10.col-sm-offset-1
+            small &copy; 2015 Sample Dev Sites
