@@ -131,7 +131,8 @@ gulp.task('html', ['sass'], function () {
         /\.popover/,
         /\.carousel/,
         /\.affix/,
-        /\.in/
+        /\.in/,
+        /\.animated/
       ]
     })))
     .pipe(gulpif('*.css', cmq()))
