@@ -71,11 +71,20 @@ Bootstrapの各種変数は「dev/scss/_bootstrap-variables.scss」を編集し�
 ```
 dev
 └── scss
-    ├── components
+    ├── _bootstrap.scss  // Bootstrap import指定
+    ├── _variables-original.scss  // オリジナルの変数
     ├── _variables.scss  // Bootstrapの変数
-    ├── _bootstrap.scss  // Bootstrapのscssimport指定
-    ├── _icons.scss  // オリジナルのアイコンフォント用scss
-    ├── _variables-original.scss  // オリジナルの変数用scss
+    ├── components
+    │   ├── _block.scss
+    │   ├── _buttons.scss
+    │   ├── _grid.scss
+    │   ├── _icons.scss  // オリジナルのアイコンフォント用scss
+    │   ├── _jumbotron.scss
+    │   ├── _navbar.scss
+    │   ├── _type.scss
+    │   └── _utility.scss
+    ├── layout
+    │   └── _layout.scss
     └── style.scss
 ```
 
@@ -102,8 +111,12 @@ gulp.task('iconfonts', function(){
 
 アイコンを表示させる際は、以下のように。
 
-``` jade
+```
+// jade
 i.icon.icon-name(aria-hidden="true")
+
+// html
+<i class="icon icon-name" aria-hidden="true"></i>
 ```
 
 ## Bowerコンポーネントを追加してみる
