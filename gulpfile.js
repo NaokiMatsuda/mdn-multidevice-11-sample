@@ -54,6 +54,9 @@ gulp.task('jade', function() {
   return gulp.src(['dev/jade/**/*.jade', '!dev/jade/**/_*.jade'])
     // .pipe(changed('jade', {extension: '.jade'}))
     // .pipe(cached('jade'))
+    .pipe(plumber({
+      errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
     .pipe(jade({
       pretty: true,
       basedir: 'dev/jade'
