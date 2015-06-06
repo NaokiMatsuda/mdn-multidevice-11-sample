@@ -2,7 +2,12 @@
 
 ## はじめに
 
-Bowerのコンポーネント（Bootstrap for Sass など）と、gulpで使用するnode moduleをインストール。
+node.js、npm、bowerがインストールされている必要があります。
+
+
+## 必要ファイルをダウンロードする
+
+Bowerのコンポーネント（Bootstrap for Sass など）と、gulpで使用するnode moduleをインストールしてください。
 
 ``` bash
 $ bower install
@@ -11,7 +16,7 @@ $ npm install
 
 ## gulpで必要ファイルを作業スペースにコピー
 
-Bootstrapの変数ファイルを作業スペースにコピーしてくる。
+Bootstrapの変数ファイルを作業スペースにコピーしてくるため、以下のコマンドを実行します。
 
 ``` bash
 $ gulp init
@@ -93,6 +98,12 @@ gulp.task('iconfonts', function(){
     }))
     .pipe(gulp.dest('dev/fonts'));
 });
+```
+
+アイコンを表示させる際は、以下のように。
+
+``` jade
+i.icon.icon-name(aria-hidden="true")
 ```
 
 ## Bowerコンポーネントを追加してみる
