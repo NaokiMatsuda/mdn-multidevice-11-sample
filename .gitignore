@@ -1,6 +1,7 @@
 node_modules
 bower_components
 dev/css
+dev/index.html
 *.map
 htdocs
 .DS_Store
