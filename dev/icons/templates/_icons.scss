@@ -7,7 +7,7 @@
     url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
 }
 
-%icon {
+.icon {
   font-family: "<%= fontName %>";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -31,7 +31,7 @@
 
 @mixin icon($filename, $insert: before) {
   &:#{$insert} {
-    @extend %icon;
+    // @extend %icon;
     content: icon-char($filename);
   }
 }
