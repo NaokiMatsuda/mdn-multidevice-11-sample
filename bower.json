@@ -5,6 +5,7 @@
     "bootstrap-sass-official": "~3.3.4",
     "modernizr": "~2.8.3",
     "respond": "~1.4.2",
-    "fontawesome": "~4.3.0"
+    "fontawesome": "~4.3.0",
+    "animate.css": "~3.3.0"
   }
 }
