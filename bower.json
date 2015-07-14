@@ -2,10 +2,11 @@
   "name": "mdn-multidevice-11-sample",
   "private": true,
   "dependencies": {
-    "bootstrap-sass-official": "~3.3.4",
+    "bootstrap-sass-official": "~3.3.5",
     "modernizr": "~2.8.3",
     "respond": "~1.4.2",
     "fontawesome": "~4.3.0",
-    "animate.css": "~3.3.0"
+    "formhack": "https://github.com/ireade/formhack.git",
+    "animate.css-scss": "~3.1.0"
   }
 }

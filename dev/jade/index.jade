@@ -31,7 +31,7 @@ block body
               li: a(href="#") Separated link
   header
     .jumbotron.jumbotron-bgimg.block-pd-xl.bg-gray-base
-      .container
+      .container-fluid
         .row
           .col-sm-10.col-sm-offset-1
             .bounceInDown.animated
@@ -80,6 +80,16 @@ block body
                 i.glyphicon.glyphicon-camera(aria-hidden="true")
               h3 Lorem ipsum
               p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, minima quo repellat inventore animi iure optio itaque natus voluptas facilis sunt labore ipsa, blanditiis minus cum. Incidunt necessitatibus, delectus.
+            section.block-mg-md
+              h2 Form
+              form(action='', method='POST', role='form')
+                fieldset
+                  legend Form title
+                  .form-group
+                    label(for='') label
+                    input.form-control(type='text', placeholder='Input field')
+                  button.btn.btn-primary(type='submit') Submit
+
         .col-sm-4
           aside
             section.block-mg-md

@@ -90,8 +90,8 @@ gulp.task('iconfonts', function(){
   return gulp.src(['dev/icons/*.svg'])
     .pipe(iconfontCss({
       fontName: 'myicons',
-      path: 'dev/icons/templates/_icons.scss',
-      targetPath: '../scss/components/_icons.scss',
+      path: 'dev/icons/templates/_myicons.scss',
+      targetPath: '../scss/components/_myicons.scss',
       fontPath: '../../fonts/'
     }))
     .pipe(iconfont({
@@ -209,6 +209,7 @@ gulp.task('wiredep', function () {
       ignorePath: '../../',
       exclude: [
         'bootstrap-sass-official',
+        'jquery',
         'modernizr',
         'respond'
       ]}))
@@ -217,7 +218,7 @@ gulp.task('wiredep', function () {
   gulp.src('dev/scss/*.scss')
     .pipe(wiredep({
       directory: 'bower_components',
-      ignorePath: '../',
+      ignorePath: '',
       exclude: [
         'bootstrap-sass-official'
       ]}))
