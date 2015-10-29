@@ -7,7 +7,7 @@ var gulp            = require('gulp'),
     browserSync     = require('browser-sync'),
     del             = require('del'),
     glob            = require('glob'),
-    autoprefixer    = require('autoprefixer-core'),
+    autoprefixer    = require('autoprefixer'),
     cached           = require('gulp-cached'),
     cmq             = require('gulp-combine-media-queries'),
     filter          = require('gulp-filter'),
@@ -209,7 +209,6 @@ gulp.task('wiredep', function () {
       ignorePath: '../../',
       exclude: [
         'bootstrap-sass-official',
-        'jquery',
         'modernizr',
         'respond'
       ]}))
