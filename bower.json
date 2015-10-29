@@ -6,7 +6,22 @@
     "modernizr": "~2.8.3",
     "respond": "~1.4.2",
     "fontawesome": "~4.3.0",
-    "formhack": "https://github.com/ireade/formhack.git",
-    "animate.css-scss": "~3.1.0"
+    "animate.css-scss": "~3.1.0",
+    "jquery-smooth-scroll": "jquery.smooth-scroll#~1.5.6",
+    "bootstrap-autohidingnavbar": "~1.0.4",
+    "Slidebars": "~0.10.3"
+  },
+  "overrides": {
+    "bootstrap-autohidingnavbar": {
+      "dependencies": {
+        "jquery": ">= 1.9.1"
+      }
+    },
+    "Slidebars": {
+      "main": [
+        "dist/slidebars.js",
+        "dist/slidebars.css"
+      ]
+    }
   }
 }
