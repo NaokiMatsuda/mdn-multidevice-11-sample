@@ -13,6 +13,7 @@ block body
           span.icon-bar
           span.icon-bar
           span.icon-bar
+        a(href="#").navbar-brand.sb-toggle-left.navbar-left ≡
         a(href="#").navbar-brand Title
       .collapse.navbar-collapse.navbar-ex1-collapse
         ul.nav.navbar-nav
@@ -29,79 +30,86 @@ block body
               li: a(href="#") Another action
               li: a(href="#") Something else here
               li: a(href="#") Separated link
-  header
-    .jumbotron.jumbotron-bgimg.block-pd-xl.bg-gray-base
+  #sb-site
+    header
+      .jumbotron
+        .container-fluid
+          .row
+            .col-sm-10.col-sm-offset-1
+              .bounceInDown.animated
+                h1 Hello, world!
+              .bounceInUp.animated
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum cumque aliquid quisquam obcaecati perferendis. Quia ipsa possimus veritatis ducimus iure at earum maiores, fugiat nihil repellendus temporibus cum deserunt quas!
+                p
+                  a(href="#").btn.btn-default.btn-ghost.btn-lg Learn more
+    main(role="main")#main
       .container-fluid
         .row
-          .col-sm-10.col-sm-offset-1
-            .bounceInDown.animated
-              h1 Hello, world!
-            .bounceInUp.animated
-              p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum cumque aliquid quisquam obcaecati perferendis. Quia ipsa possimus veritatis ducimus iure at earum maiores, fugiat nihil repellendus temporibus cum deserunt quas!
-              p
-                a(href="#").btn.btn-default.btn-ghost.btn-lg Learn more
-  main(role="main")#main
-    .container
-      .row
-        .col-sm-7.col-sm-offset-1
-          article
-            section.block-mg-md
-              h2 Original Icon Fonts
-              .h2
-                i.icon.icon-icon-01(aria-hidden="true")
-                i.icon.icon-icon-02(aria-hidden="true")
-                i.icon.icon-icon-03(aria-hidden="true")
-                i.icon.icon-icon-04(aria-hidden="true")
-                i.icon.icon-icon-05(aria-hidden="true")
-                i.icon.icon-icon-06(aria-hidden="true")
-                i.icon.icon-icon-07(aria-hidden="true")
-                i.icon.icon-icon-08(aria-hidden="true")
-                i.icon.icon-icon-09(aria-hidden="true")
-                i.icon.icon-icon-10(aria-hidden="true")
-            section.block-mg-md
-              h2 Fontawesome Glyphicon
-              .h2
-                i.fa.fa-twitter(aria-hidden="true")
-                i.fa.fa-gihub(aria-hidden="true")
-                i.fa.fa-facebook(aria-hidden="true")
-                i.fa.fa-apple(aria-hidden="true")
-                i.fa.fa-angle-right(aria-hidden="true")
-            section.block-mg-md
-              h2 Bootstrap Glyphicon
-              .h2
-                i.glyphicon.glyphicon-asterisk(aria-hidden="true")
-                i.glyphicon.glyphicon-plus(aria-hidden="true")
-                i.glyphicon.glyphicon-euro(aria-hidden="true")
-                i.glyphicon.glyphicon-minus(aria-hidden="true")
-                i.glyphicon.glyphicon-cloud(aria-hidden="true")
-                i.glyphicon.glyphicon-envelope(aria-hidden="true")
-                i.glyphicon.glyphicon-pencil(aria-hidden="true")
-                i.glyphicon.glyphicon-cloud(aria-hidden="true")
-                i.glyphicon.glyphicon-camera(aria-hidden="true")
-              h3 Lorem ipsum
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, minima quo repellat inventore animi iure optio itaque natus voluptas facilis sunt labore ipsa, blanditiis minus cum. Incidunt necessitatibus, delectus.
-            section.block-mg-md
-              h2 Form
-              form(action='', method='POST', role='form')
-                fieldset
-                  legend Form title
-                  .form-group
-                    label(for='') label
-                    input.form-control(type='text', placeholder='Input field')
-                  button.btn.btn-primary(type='submit') Submit
+          .col-sm-6.col-sm-offset-1
+            article
+              section.block-mg-md
+                h1 Heading
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              section.block-mg-md
+                h2 Original Icon Fonts
+                .h2
+                  i.icon.icon-icon-01(aria-hidden="true")
+                  i.icon.icon-icon-02(aria-hidden="true")
+                  i.icon.icon-icon-03(aria-hidden="true")
+                  i.icon.icon-icon-04(aria-hidden="true")
+                  i.icon.icon-icon-05(aria-hidden="true")
+                  i.icon.icon-icon-06(aria-hidden="true")
+                  i.icon.icon-icon-07(aria-hidden="true")
+                  i.icon.icon-icon-08(aria-hidden="true")
+                  i.icon.icon-icon-09(aria-hidden="true")
+                  i.icon.icon-icon-10(aria-hidden="true")
+              section.block-mg-md
+                h2 Fontawesome Glyphicon
+                .h2
+                  i.fa.fa-twitter(aria-hidden="true")
+                  i.fa.fa-gihub(aria-hidden="true")
+                  i.fa.fa-facebook(aria-hidden="true")
+                  i.fa.fa-apple(aria-hidden="true")
+                  i.fa.fa-angle-right(aria-hidden="true")
+              section.block-mg-md
+                h3 paragraph
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              section.block-mg-md
+                h3 Form
+                form(action='', method='POST', role='form')
+                  fieldset
+                    legend Form title
+                    .form-group
+                      label(for='') label
+                      input.form-control(type='text', placeholder='Input field')
+                    .form-group
+                      label(for='') label
+                      input.form-control(type='text', placeholder='Input field')
+                    p
+                      button.btn.btn-primary(type='submit') Submit
 
-        .col-sm-4
-          aside
-            section.block-mg-md
-              h2 aside
-              ul
-                li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
-                li Lorem ipsum dolor sit amet
-  footer
-    .block-pd-md.bg-gray-lightest
-      .container
-        .row
-          .col-sm-10.col-sm-offset-1
-            small &copy; 2015 Sample Dev Sites
+          .col-sm-3.col-sm-offset-1
+            aside
+              section.block-mg-md
+                h2 aside
+                ul.list-group
+                  li.list-group-item Item 1
+                  li.list-group-item Item 2
+                  li.list-group-item Item 3
+                ul
+                  li Lorem ipsum dolor sit amet
+                  li Lorem ipsum dolor sit amet
+                  li Lorem ipsum dolor sit amet
+                  li Lorem ipsum dolor sit amet
+    hr
+    .page-top.text-center.block-mg-md
+      a(href="#top") Page Top
+    footer
+      .block-pd-md.bg-gray-lightest
+        .container
+          .row
+            .col-sm-10.col-sm-offset-1
+              small &copy; 2015 Sample Dev Sites
+  .sb-slidebar.sb-left
+    p aaaa
