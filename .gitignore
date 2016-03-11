@@ -6,5 +6,5 @@ dev/index.html
 htdocs
 .DS_Store
 .sass-cache
-nom-debug.log
+npm-debug.log
 
