@@ -1,10 +1,10 @@
 @font-face {
   font-family: "myicons";
-  src: url('../../fonts/myicons.eot');
-  src: url('../../fonts/myicons.eot?#iefix') format('eot'),
-    url('../../fonts/myicons.woff') format('woff'),
-    url('../../fonts/myicons.ttf') format('truetype'),
-    url('../../fonts/myicons.svg#myicons') format('svg');
+  src: url('../fonts/myicons.eot');
+  src: url('../fonts/myicons.eot?#iefix') format('eot'),
+    url('../fonts/myicons.woff') format('woff'),
+    url('../fonts/myicons.ttf') format('truetype'),
+    url('../fonts/myicons.svg#myicons') format('svg');
 }
 
 .icon {
@@ -52,6 +52,9 @@
   @if $filename == icon-10 {
     $char: "\E00A";
   }
+  @if $filename == icon-11 {
+    $char: "\E00B";
+  }
 
   @return $char;
 }
@@ -92,4 +95,7 @@
 }
 .icon-icon-10 {
   @include icon(icon-10);
+}
+.icon-icon-11 {
+  @include icon(icon-11);
 }

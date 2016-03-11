@@ -8,8 +8,8 @@ var gulp            = require('gulp'),
     del             = require('del'),
     glob            = require('glob'),
     autoprefixer    = require('autoprefixer'),
-    cached           = require('gulp-cached'),
-    cmq             = require('gulp-combine-media-queries'),
+    cached          = require('gulp-cached'),
+    cmq             = require('gulp-merge-media-queries'),
     filter          = require('gulp-filter'),
     flatten         = require('gulp-flatten'),
     iconfont        = require('gulp-iconfont'),
@@ -20,6 +20,7 @@ var gulp            = require('gulp'),
     jshint          = require('gulp-jshint'),
     jshintStylish   = require('jshint-stylish'),
     csso            = require('gulp-csso'),
+    minifyCss         = require('gulp-minify-css'),
     plumber         = require('gulp-plumber'),
     replace         = require('gulp-replace'),
     sass            = require('gulp-sass'),
@@ -31,18 +32,19 @@ var gulp            = require('gulp'),
     mainBowerFiles  = require('main-bower-files'),
     postcss         = require('gulp-postcss'),
     notify          = require('gulp-notify'),
-    wiredep         = require('wiredep').stream;
+    wiredep         = require('wiredep').stream,
+    modernizr       = require('gulp-modernizr');
 
 
 // 初期化
 // ------------------------------------------
 gulp.task('init', function() {
-  var bstFilter = filter(['**/_bootstrap.scss', '**/_variables.scss']);
-  return gulp.src(['bower_components/bootstrap-sass-official/assets/stylesheets/**'])
-    .pipe(bstFilter)
-    .pipe(gulpif('**/_bootstrap.scss', replace('@import "bootstrap/', '@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/')))
+  var bsFilter = filter(['**/_bootstrap.scss', '**/_variables.scss']);
+  return gulp.src(['bower_components/bootstrap-sass/assets/stylesheets/**'])
+    .pipe(bsFilter)
+    .pipe(gulpif('**/_bootstrap.scss', replace('@import "bootstrap/', '@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/')))
     .pipe(gulpif('**/_variables.scss', replace(' !default;', ';')))
-    .pipe(gulpif('**/_variables.scss', replace('"../fonts/bootstrap/"', '"../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/"')))
+    .pipe(gulpif('**/_variables.scss', replace('"../fonts/bootstrap/"', '"../bower_components/bootstrap-sass/assets/fonts/bootstrap/"')))
     .pipe(flatten())
     .pipe(gulp.dest('dev/scss'));
 });
@@ -69,7 +71,7 @@ gulp.task('jade', function() {
 // ------------------------------------------
 gulp.task('sass', function () {
   var processors = [
-    autoprefixer({browsers: ['last 2 version']})
+    autoprefixer({browsers: ['last 1 version']})
   ];
   return gulp.src('dev/scss/style.scss')
     // .pipe(cached('sass'))
@@ -77,11 +79,25 @@ gulp.task('sass', function () {
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    // .pipe(sass())
+    .pipe(sass.sync({
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['.']
+    }).on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dev/css'));
 });
+
+
+// modernizr
+// ------------------------------------------
+// gulp.task('modernizr', function() {
+//   return gulp.src('dev/js/**/*.js')
+//     .pipe(modernizr())
+//     .pipe(gulp.dest("dev/js"))
+// });
 
 
 // アイコンフォント生成
@@ -92,7 +108,7 @@ gulp.task('iconfonts', function(){
       fontName: 'myicons',
       path: 'dev/icons/templates/_myicons.scss',
       targetPath: '../scss/components/_myicons.scss',
-      fontPath: '../../fonts/'
+      fontPath: '../fonts/'
     }))
     .pipe(iconfont({
       fontName: 'myicons'
@@ -104,7 +120,7 @@ gulp.task('iconfonts', function(){
 // Lint JavaScript
 // ------------------------------------------
 gulp.task('jshint', function () {
-  return gulp.src('dev/scripts/**/*.js')
+  return gulp.src('dev/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
@@ -114,16 +130,16 @@ gulp.task('jshint', function () {
 // HTMLで参照しているCSS/JSファイルを結合・minify
 // ------------------------------------------
 gulp.task('html', ['sass'], function () {
-  var assets = useref.assets({searchPath: 'dev'});
+  // var assets = useref.assets({searchPath: 'dev'});
 
   return gulp.src('dev/*.html')
-    .pipe(assets)
+    .pipe(useref())
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', uncss({
       html: glob.sync('dev/*.html'),
       ignore: [
-        /\.mdn-/,
-        /\.js-/,
+        /\.js/,
+        /\.fa/,
         /\.open/,
         /\.active/,
         /\.collapse/,
@@ -132,15 +148,16 @@ gulp.task('html', ['sass'], function () {
         /\.carousel/,
         /\.affix/,
         /\.in/,
-        /\.animated/
+        /\.animated/,
+        /\.slick/
       ]
     })))
     .pipe(gulpif('*.css', cmq()))
-    .pipe(gulpif('*.css', csso()))
-    .pipe(gulpif('*.css', replace('../bower_components/bootstrap-sass-official/assets/fonts/bootstrap', '../fonts')))
+    .pipe(gulpif('*.css', minifyCss()))
+    // .pipe(gulpif('*.css', replace('../bower_components/bootstrap-sass/assets/fonts/bootstrap', '../fonts')))
     .pipe(gulpif('*.css', replace('../bower_components/fontawesome/fonts', '../fonts')))
-    .pipe(assets.restore())
-    .pipe(useref())
+    // .pipe(assets.restore())
+    // .pipe(useref())
     .pipe(gulp.dest('htdocs'));
 });
 
@@ -208,18 +225,19 @@ gulp.task('wiredep', function () {
       directory: 'bower_components',
       ignorePath: '../../',
       exclude: [
-        'bootstrap-sass-official',
+        'bootstrap-sass',
         'modernizr',
         'respond'
       ]}))
     .pipe(gulp.dest('dev/jade'));
 
-  gulp.src('dev/scss/*.scss')
+  gulp.src('dev/scss/**/*.scss')
     .pipe(wiredep({
       directory: 'bower_components',
       ignorePath: '',
       exclude: [
-        'bootstrap-sass-official'
+        'bootstrap',
+        'bootstrap-sass'
       ]}))
     .pipe(gulp.dest('dev/scss'));
 });

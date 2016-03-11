@@ -5,32 +5,32 @@ block meta
   meta(name='description', content='***********')
   meta(name='keywords', content='***********')
 block body
-  .navbar-wrap
-    nav(role="navigation").navbar.navbar-default.navbar-fixed-top
-      .navbar-header
-        button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a(href="#").navbar-brand.sb-toggle-left.navbar-left ≡
-        a(href="#").navbar-brand Title
-      .collapse.navbar-collapse.navbar-ex1-collapse
-        ul.nav.navbar-nav
-          li.active: a(href="#") Link
-          li: a(href="#") Link
-        ul.nav.navbar-nav.navbar-right
-          li: a(href="#") Link
-          li.dropdown
-            a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false")
-              | Dropdown
-              span.caret
-            ul.dropdown-menu(role="menu")
-              li: a(href="#") Action
-              li: a(href="#") Another action
-              li: a(href="#") Something else here
-              li: a(href="#") Separated link
   #sb-site
+    .navbar-wrap
+      nav(role="navigation").navbar.navbar-default.navbar-fixed-top
+        .navbar-header
+          button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(href="#").navbar-brand.sb-toggle-left.navbar-left ≡
+          a(href="#").navbar-brand Title
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav
+            li.active: a(href="#") Link
+            li: a(href="#") Link
+          ul.nav.navbar-nav.navbar-right
+            li: a(href="#") Link
+            li.dropdown
+              a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false")
+                | Dropdown
+                span.caret
+              ul.dropdown-menu(role="menu")
+                li: a(href="#") Action
+                li: a(href="#") Another action
+                li: a(href="#") Something else here
+                li: a(href="#") Separated link
     header
       .jumbotron
         .container-fluid
@@ -46,6 +46,49 @@ block body
       .container-fluid
         .row
           .col-sm-6.col-sm-offset-1
+            section.block-mg-md
+              .slick-demo
+                div
+                  img(src="https://unsplash.it/1120/700").img-responsive
+                div
+                  img(src="https://unsplash.it/1120/700").img-responsive
+                div
+                  img(src="https://unsplash.it/1120/700").img-responsive
+            section.block-mg-md
+              h1 Grid / row-no-gutter
+              .row-no-gutter
+                .col-md-4
+                  img(src="https://unsplash.it/400/200/?random").img-responsive
+                .col-md-4
+                  img(src="https://unsplash.it/g/400/200/?random").img-responsive
+                .col-md-4
+                  img(src="https://unsplash.it/400/200?image=999").img-responsive
+            section.block-mg-md
+              h1 Grid / row-v-middle
+              .row-v-middle
+                .col-md-4
+                  img(src="https://unsplash.it/400/300/?random").img-responsive
+                .col-md-4 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                .col-md-4
+                  img(src="https://unsplash.it/400/200/?random").img-responsive
+            section.block-mg-md
+              h1 Buttons
+              .block-mg-sm
+                .btn.btn-default button
+                .btn.btn-primary button
+                .btn.btn-success button
+                .btn.btn-info button
+                .btn.btn-warning button
+                .btn.btn-danger button
+                .btn.btn-white button
+              .block-mg-sm
+                .btn.btn-ghost.btn-default button
+                .btn.btn-ghost.btn-primary button
+                .btn.btn-ghost.btn-success button
+                .btn.btn-ghost.btn-info button
+                .btn.btn-ghost.btn-warning button
+                .btn.btn-ghost.btn-danger button
+                .btn.btn-ghost.btn-white button
             article
               section.block-mg-md
                 h1 Heading
@@ -63,6 +106,7 @@ block body
                   i.icon.icon-icon-08(aria-hidden="true")
                   i.icon.icon-icon-09(aria-hidden="true")
                   i.icon.icon-icon-10(aria-hidden="true")
+                  i.icon.icon-icon-11(aria-hidden="true")
               section.block-mg-md
                 h2 Fontawesome Glyphicon
                 .h2
@@ -111,5 +155,9 @@ block body
           .row
             .col-sm-10.col-sm-offset-1
               small &copy; 2015 Sample Dev Sites
-  .sb-slidebar.sb-left
-    p aaaa
+  .sb-slidebar.sb-left.text-white
+    ul
+      li Item 1
+      li Item 2
+      li Item 3
+

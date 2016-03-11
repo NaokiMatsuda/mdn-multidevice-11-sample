@@ -1,26 +1,50 @@
 {
   "name": "mdn-multidevice-11-sample",
   "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bootstrap"
+  ],
   "dependencies": {
-    "bootstrap-sass-official": "~3.3.5",
+    "bootstrap-sass": "^3.3.6",
+    "bootstrap-autohidingnavbar": "~1.0.4",
+    "bootstrap-select": "^1.9.4",
+    "bootstrap-switch": "^3.3.2",
+    "bootstrap-table": "^1.10.0",
+    "bootstrap-treeview": "^1.2.0",
     "modernizr": "~2.8.3",
     "respond": "~1.4.2",
+    "animate.css": "^3.5.1",
     "fontawesome": "~4.3.0",
-    "animate.css-scss": "~3.1.0",
-    "jquery-smooth-scroll": "jquery.smooth-scroll#~1.5.6",
-    "bootstrap-autohidingnavbar": "~1.0.4",
-    "Slidebars": "~0.10.3"
+    "jquery-smooth-scroll": "^1.7.2",
+    "jquery-focuspoint": "~1.1.1",
+    "awesome-bootstrap-checkbox": "^0.3.5",
+    "formvalidation": "^1.2.0",
+    "slick-carousel": "^1.5.9",
+    "Slidebars": "~0.10.3",
+    "imagehover.css": "https://github.com/ciar4n/imagehover.css.git",
+    "jquery": "^2.2.1"
   },
   "overrides": {
     "bootstrap-autohidingnavbar": {
-      "dependencies": {
-        "jquery": ">= 1.9.1"
-      }
+      "dependencies": {}
+    },
+    "bootstrap-switch": {
+      "dependencies": {}
+    },
+    "bootstrap-treeview": {
+      "dependencies": {}
     },
     "Slidebars": {
       "main": [
         "dist/slidebars.js",
         "dist/slidebars.css"
+      ]
+    },
+    "imagehover.css": {
+      "main": [
+        "css/imagehover.css"
       ]
     }
   }

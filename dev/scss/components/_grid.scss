@@ -12,35 +12,43 @@
 
 // grid no-padding
 // -------------------------
-.row-nopadding {
-  @include clearfix();
+.row-no-gutter {
+  @extend .row;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  @for $i from 1 through $grid-columns {
-    .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
-      padding-left: 0;
-      padding-right: 0;
-    }
+  > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 
 // grid inline-block
 // -------------------------
-.row-inlineblock {
+.row-v-middle {
   @extend .row;
   letter-spacing: -.4em;
   @for $i from 1 through $grid-columns {
-    .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+    > .col-xs-#{$i}, > .col-sm-#{$i}, > .col-md-#{$i}, > .col-lg-#{$i} {
       float: none;
       letter-spacing: 0;
       vertical-align: middle;
     }
-    .col-xs-#{$i} {
+    > .col-xs-#{$i} {
       display: inline-block;
     }
     @media (min-width: $screen-sm-min) {
-      .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i} {
+      > .col-sm-#{$i} {
+        display: inline-block;
+      }
+    }
+    @media (min-width: $screen-md-min) {
+      > .col-md-#{$i} {
+        display: inline-block;
+      }
+    }
+    @media (min-width: $screen-lg-min) {
+      > .col-lg-#{$i} {
         display: inline-block;
       }
     }

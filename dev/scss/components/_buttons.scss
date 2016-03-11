@@ -2,16 +2,64 @@
 // Buttons
 // --------------------------------------------------
 
+
+// btn (default)
+// -------------------------
+
 .btn {
-  &:hover {
-    transition: .3s;
-  }
+  border: none;
+  transition: .3s;
+}
+.btn-default {
+  background-color: $btn-default-bg;
 }
 
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-danger,
-.btn-warning {
-  border: none;
+
+// btn-ghost
+// -------------------------
+.btn-ghost {
+  background: transparent;
+  border-width: 1px;
+  border-style: solid;
+  &.btn-default {
+    color: $btn-default-color;
+    border-color: $btn-default-color;
+  }
+  &.btn-primary {
+    color: $brand-primary;
+    border-color: $brand-primary;
+  }
+  &.btn-success {
+    color: $brand-success;
+    border-color: $brand-success;
+  }
+  &.btn-info {
+    color: $brand-info;
+    border-color: $brand-info;
+  }
+  &.btn-warning {
+    color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  &.btn-danger {
+    color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  &.btn-white {
+    color: $white-base;
+    border-color: $white-base;
+    &:hover {
+      background-color: rgba(#fff, .5);
+    }
+  }
+
+  &.btn-primary,
+  &.btn-success,
+  &.btn-info,
+  &.btn-danger,
+  &.btn-warning {
+    &:hover {
+      color: $white-base;
+    }
+  }
 }
